@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .active{
+            font-weight: bold;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jquery</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>ES6</li>
+    </ul>
+    <script type="text/javascript">
+        //补充代码
+        let ul = document.getElementById('ul');
+        let length = ul.children.length;
+        let appendText = '-我是第$index个元素';
+        for(let i = 0;i<length;i++){
+            let li = ul.children[i];
+            
+            li.onmouseover = function(){
+                this.innerText = this.innerText + appendText.replace('$index',i);
+                this.classList.add('active');
+            }
+            li.onmouseout = function(){
+                this.innerText = this.innerText.replace(appendText.replace('$index',i),'');
+                this.classList.remove('active');   
+            }
+        }
+        console.log(ul.children);
+    </script>
+</body>
+</html>
