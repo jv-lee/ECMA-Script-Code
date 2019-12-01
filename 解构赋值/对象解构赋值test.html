@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>对象解构赋值-TEST</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    	let node = {
+    		type:'Identifier',
+    		name:'ES',
+    		loc:{
+    			start:['line','colum'],
+    			end:{
+    				line:1,
+    				column:4
+    			}
+    		}
+    	};
+
+    	let {loc:{start:[lineItem],end:{line:lineItem2}}} = node;
+    	console.log(lineItem);
+    	console.log(lineItem2);
+    </script>
+</body>
+
+</html>
