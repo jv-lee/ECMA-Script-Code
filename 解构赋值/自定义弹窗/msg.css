@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.scroll-content {
+    overflow: auto;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.alert-warp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform:scale(0,0);
+}
+
+.alert-container {
+    box-shadow: 0 0 10px #fff;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 300px;
+    background: white;
+    padding: 10px 15px;
+}
+
+.title-wrap,
+.content-wrap,
+.btn-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.title-wrap {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 26px;
+}
+
+.content-wrap {
+    margin-top: 10px;
+}
+
+.btn-wrap {
+    margin-top: 10px;
+    flex-direction: row-reverse;
+    padding: 6px;
+}
+
+.content-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: red;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-size: 30px;
+}
+
+.content-text {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.btn-cancel,
+.btn-confirm {
+    width: 60px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.btn-cancel {
+    background: blue;
+}
+
+.btn-confirm {
+    background: red;
+}
