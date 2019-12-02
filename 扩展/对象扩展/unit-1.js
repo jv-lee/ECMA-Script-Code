@@ -85,41 +85,59 @@
 
 //对象的新方法
 {
-	const obj = {
-		a:1,
-		b:2,
-		c:3,
-		d:4
-	};
+	{
+		const obj = {
+			a:1,
+			b:2,
+			c:3,
+			d:4
+		};
 
-	//Object.keys
-	console.log(Object.keys(obj));
-	//Object.values
-	console.log(Object.values(obj));
-	//Object.entries
-	console.log(Object.entries(obj));
+		//Object.keys
+		console.log(Object.keys(obj));
+		//Object.values
+		console.log(Object.values(obj));
+		//Object.entries
+		console.log(Object.entries(obj));
 
-	for(let key of Object.keys(obj)){
-		console.log(key);
+		for(let key of Object.keys(obj)){
+			console.log(key);
+		}
+
+		for(let [k,v] of Object.entries(obj)){
+			console.log(k,v);
+		}
 	}
 
-	for(let [k,v] of Object.entries(obj)){
-		console.log(k,v);
+
+	//setPrototypeOf 修改对象原型方法 \ getPrototypeOf 读取对象的原型
+	{
+		const obj1 = {
+			a:1
+		}
+		const obj2 ={
+			b:2
+		}
+		//创建对象，属性作为原型属性 ，不作为普通属性
+		const newObj = Object.create(obj1);
+		console.log(newObj.__proto__);
+		Object.setPrototypeOf(newObj,obj2);
+		console.log(newObj.__proto__);
+
+		console.log(Object.getPrototypeOf(newObj));
 	}
 
+	//super
+	{
+		const obj = {name:'xiaoming'};
 
-	//setPrototypeOf 修改对象原型方法
-	const obj1 = {
-		a:1
-	}
-	const obj2 ={
-		b:2
-	}
-	//创建对象，属性作为原型属性 ，不作为普通属性
-	const newObj = Object.create(obj1);
-	console.log(newObj.__proto__);
-	Object.setPrototypeOf(newObj,obj2);
-	console.log(newObj.__proto__);
+		const cObj = {
+			say(){
+				console.log(`My name is ${super.name}`);
+			}
+		};
 
-	//getPrototypeOf 读取对象的原型
+		Object.setPrototypeOf(cObj,obj); 
+		cObj.say();
+	}
 }
