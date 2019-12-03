@@ -5,11 +5,26 @@
     <meta charset="UTF-8">
     <title>自定义弹窗</title>
     <link rel="stylesheet" type="text/css" href="./msg.css">
+    <style>
+        #click{
+            margin-left: 10px;
+            width: 120px;
+            height: 40px;
+            background: #418BEB;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            box-shadow: 0 0 10px #418BEB;
+        }
+    </style>
 </head>
-
+    
 <body>
     <div class="main-container" id="main-container">
         <div class="scroll-content">
+            <button id="click">弹个框</button>
             <div>this is scroll content - 1</div>
             <div>this is scroll content - 2</div>
             <div>this is scroll content - 3</div>
@@ -32,10 +47,16 @@
     </div>
     <script type="text/javascript" src="./msg.js"></script>
     <script type="text/javascript">
-    	new $Msg({
-    		content:'任务',
-    		parentId:'main-container'
-    	});
+        document.querySelector('#click').addEventListener('click',()=>{
+            new $Msg({
+                title:'任务提示',
+                content:'是否开始任务请求<span style="color:red">？</span>',
+                parentId:'main-container',
+                cancel:()=>console.log('cancel >>>'),
+                confirm:()=>console.log('confirm >>>')
+            });
+        });
+    	
     </script>
 </body>
 

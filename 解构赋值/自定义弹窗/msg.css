@@ -41,6 +41,8 @@
     width: 300px;
     background: white;
     padding: 10px 15px;
+    transform:scale(0,0);
+    transition: all .3s;
 }
 
 .title-wrap,
@@ -53,7 +55,10 @@
 .title-wrap {
     justify-content: space-between;
     width: 100%;
-    font-size: 26px;
+    font-size: 20px;
+}
+.title-close{
+    cursor: pointer;
 }
 
 .content-wrap {
@@ -70,20 +75,21 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: red;
+    background: #ff7574;
     text-align: center;
     line-height: 60px;
     color: white;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .content-text {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 30px;
 }
 
 .btn-cancel,
 .btn-confirm {
+    cursor: pointer;
     width: 60px;
     height: 30px;
     color: white;
@@ -94,9 +100,9 @@
 }
 
 .btn-cancel {
-    background: blue;
+    background: #FF343E;
 }
 
 .btn-confirm {
-    background: red;
+    background: #418BEB;
 }

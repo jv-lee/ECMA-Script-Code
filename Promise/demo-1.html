@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#elem{
+			width: 100px;
+			background: green;
+			transition: all 1s;
+			color:white;
+			line-height: 100px;
+			text-align: center;
+			font-size:40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="elem">哦</div>
+	<button id="btn">开始</button>
+	<script>
+		//动画
+		function moveTo(elem,x,y,cb){
+			elem.style.transfrom = `translate(${x}px,${y}px)`;
+			setTimeout(function(){
+				cb && cb();
+			},1000);
+		}
+
+		let elem = document.querySelector('div');
+		document.querySelector('button').addEventListener('click',e=>{
+			moveTo(elem,100,100,function())
+		});
+	</script>
+</body>
+</html>
