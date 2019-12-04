@@ -20,16 +20,31 @@
 	<button id="btn">开始</button>
 	<script>
 		//动画
-		function moveTo(elem,x,y,cb){
-			elem.style.transfrom = `translate(${x}px,${y}px)`;
-			setTimeout(function(){
-				cb && cb();
-			},1000);
+		function moveTo(elem,x,y){
+			return new Promise(resolve =>{
+				elem.style.transform = `translate(${x}px,${y}px)`;
+				setTimeout(()=>{
+					resolve();
+				},1000);
+			});
 		}
 
 		let elem = document.querySelector('div');
 		document.querySelector('button').addEventListener('click',e=>{
-			moveTo(elem,100,100,function())
+			moveTo(elem,100,100)
+				.then(()=>{
+					return moveTo(elem,200,200);
+				})
+				.then(()=>{
+					return moveTo(elem,100,300);
+				})
+				.then(()=>{
+					return moveTo(elem,0,0);
+				})
+				.then(()=>{
+					console.log('移动结束');
+				});
+
 		});
 	</script>
 </body>

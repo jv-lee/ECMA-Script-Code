@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //页面中有个板块 需要多张图片加载完之后才能显示
+
+    const loadImage = (src) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+
+            img.src = src;
+
+            //加载成功
+            img.onload = () => {
+                resolve(img);
+            };
+
+            //加载失败
+            img.onerror = (e) => {
+                reject(e);
+            };
+        });
+
+    };
+
+    const imgs = [
+        'http://bbs-fd.zol-img.com.cn/t_s1200x5000/g2/M00/0A/09/ChMlWlz3KJuIN6ubABtbXDUbQ38AAKj5wHFd58AG1t0132.jpg',
+        'http://img.zcool.cn/community/016534593b5ad7a8012193a3be0388.JPG',
+        'http://b-ssl.duitang.com/uploads/item/201407/09/20140709231354_yzXVi.jpeg',
+        'http://i0.hdslb.com/bfs/article/334f9ab7c8e3e61ddf38ae396327ef1bc312d54e.jpg'
+    ];
+    
+    Promise.all(imgs.map(src => loadImage(src)))
+        .then((arr) => {
+            arr.forEach((img) => {
+                    document.body.appendChild(img);
+                })
+                .catch(e => {
+                	console.log(e);
+                });
+        });
+    </script>
+</body>
+
+</html>
