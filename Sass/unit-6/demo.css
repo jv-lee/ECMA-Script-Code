@@ -1,0 +1,52 @@
+p {
+  color: green; }
+
+.div {
+  color: blue; }
+
+.item1 {
+  width: 1px; }
+
+.item2 {
+  width: 2px; }
+
+.item3 {
+  width: 3px; }
+
+.item1 {
+  width: 1px; }
+
+.item2 {
+  width: 2px; }
+
+.item1 {
+  width: 1px; }
+
+.item2 {
+  width: 2px; }
+
+.item3 {
+  width: 3px; }
+
+.item4 {
+  width: 4px; }
+
+.item5 {
+  width: 5px; }
+
+.item6 {
+  width: 6px; }
+
+.item4 {
+  width: 4px; }
+
+.item2 {
+  width: 2px; }
+
+.div {
+  top: 1px;
+  left: 2px;
+  bottom: 3px;
+  right: 4px; }
+
+/*# sourceMappingURL=demo.css.map */

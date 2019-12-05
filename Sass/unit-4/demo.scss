@@ -1,0 +1,33 @@
+//简单继承
+.div{
+	border: 1px;
+	background-color: red;
+}
+
+.divextend{
+	@extend .div;
+	border-width: 3px;
+}
+
+//关联属性继承
+.div1{
+	border: 1px;
+	background-color: red;
+}
+
+.div1.other{
+	background-image: url('hello.jpeg');
+}
+
+.divext{
+	@extend .div1;
+}
+
+//伪类继承
+a:hover{
+	text-decoration: underline;
+}
+
+.hoverlink{
+	color:red;
+}

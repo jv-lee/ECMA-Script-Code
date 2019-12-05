@@ -1,0 +1,42 @@
+$number:70;
+$number2:71;
+
+$numberPercent:0.77;
+$numberRound:25.9;
+
+$abs:-3;
+
+//number
+.div{
+	zoom:percentage($numberPercent);//转换百分比
+	zoom:round($numberRound);//四舍五入
+	zoom:ceil($numberRound);//向上取整
+	zoom:floor($numberRound);//向下取整
+	zoom:abs($abs);//获取绝对值
+	zoom:min($number,$number2);//最小值
+	zoom:max($number,$number2);//最大值
+	zoom:random(10);//获取从0-10的整数随机数
+}
+
+//array
+$list:(1,'p',3,4,5);
+.div{
+	zoom:length($list);
+	zoom:nth($list,2);
+
+	@debug set-nth($list,1);
+	@debug join($list,(6,7,8));
+	@debug append($list,'999');
+	@debug index($list,'p');
+}
+
+//自定义函数
+$rem1 100px;
+@function px2rem($px){
+	$rem : 37.5px;
+	@return ($px/$rem) + rem;
+}
+
+.div{
+	width: px2rem($rem1);
+}

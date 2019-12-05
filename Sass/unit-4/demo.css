@@ -1,0 +1,15 @@
+.div, .divextend {
+  border: 1px;
+  background-color: red; }
+
+.divextend {
+  border-width: 3px; }
+
+.div1, .divext {
+  border: 1px;
+  background-color: red; }
+
+.div1.other, .other.divext {
+  background-image: url("hello.jpeg"); }
+
+/*# sourceMappingURL=demo.css.map */

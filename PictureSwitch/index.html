@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Picture - Switch</title>
+</head>
+<body>
+	<div class="wrap">
+		<div class="image-container">
+			<ul image-classify>
+				<li class="image-classify-type-btn image-classify-type-btn-active"></li>
+				<li class="image-classify-type-btn"></li>
+			</ul>
+			<div class="image-item-container">
+				<figure>
+					<img src="./assets/images/1.jpg"/>
+					<figcaption>title</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+	<div class="image-overlay">
+		<div class="image-overlay-prev-btn"></div>
+		<div class="image-overlay-next-btn"></div>
+		<img src="./assets/images/1.jpg">
+	</div>
+	<script type="text/javascript">
+		const img = new $Img({
+			data,
+			initType:'JavaScript',
+			parent:'#wrap'
+		});
+	</script>
+</body>
+</html>

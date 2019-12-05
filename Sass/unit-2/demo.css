@@ -1,0 +1,31 @@
+.div {
+  width: 300px;
+  height: 300px;
+  zoom: 2; }
+
+.div {
+  color: red;
+  background-color: #ffe932; }
+
+.div {
+  background-image: url("images/hello.jpeg"); }
+
+.div {
+  width: 100px;
+  height: 200px;
+  zoom: 3; }
+
+.div {
+  position: relative;
+  top: 1px;
+  left: 2px;
+  right: 4px;
+  bottom: 3px; }
+
+.div {
+  top: 1px;
+  left: 2px;
+  bottom: 3px;
+  right: 4px; }
+
+/*# sourceMappingURL=demo.css.map */

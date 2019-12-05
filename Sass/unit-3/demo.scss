@@ -1,0 +1,68 @@
+$num1:100px;
+$num2:200px;
+
+$width:$num1+$num2;
+
+$color1:#010203;
+$color2:#040506;
+$color3:#a69e61;
+
+//mixin宏
+@mixin helloMixin{
+	display: inline-block;
+	font: {
+		size:20px;
+		weight:500;
+	}
+	color:red;
+}
+
+//嵌套mixin宏
+@mixin helloMixin2{
+	padding: 10px;
+	@include helloMixin;
+	background-color: red;
+}
+
+//参数mixin
+@mixin sexy-border($color,$width){
+	border:{
+		color:$color;
+		width:$width;
+		style:dashed
+	};
+}
+
+.div{
+	width:$width;
+}
+
+// 加减乘除
+.div{
+	font:(10px/8);
+	font: (10px*8);
+	width: $width/2;
+	margin-left: (5px + 8px / 2);
+}
+
+//颜色运算
+.div{
+	color:$color1+$color2;
+}
+.div{
+	color:mix($color1,$color2);//取两个颜色的混合色
+	color:red($color1);//获取颜色的红色值
+}
+
+.div{
+	@include helloMixin;
+}
+
+.div{
+	width: 100px;
+	@include helloMixin2;
+}
+
+.div{
+	@include sexy-border(blue,2px);
+}

@@ -1,0 +1,22 @@
+$width:300px;
+$color:#fff;
+// 嵌套样式
+.div1{
+	width:$width;
+	height:$width;
+	background-color: $color;
+
+	.div-inner{
+		width: $width;
+		height:$width;
+		background-color:$color;
+		.div-inner-inner{
+			width: $width;
+			height: $width;
+			background-color: $color;
+		}
+	}
+	a{
+		color:red;
+	}
+}

@@ -1,0 +1,35 @@
+//定义变量
+$width:300px;
+$height:300px;
+
+$color:#e03434;
+
+//字符串
+$str:'hello.jpeg';
+
+$baseWidth:200px;
+$baseHeight:100px;
+
+$class:'.div';
+$styleKey:'idth';
+
+.div1{
+	width: $width;
+	height:$height;
+
+	background-color: $color;
+}
+
+.div2{
+	width: $baseWidth;
+	height: $baseHeight;
+
+	background-color: $color;
+	background-image: url('./img/#{$str}');
+}
+
+//插值变量 可以在任何位置使用
+#{$class}{
+	w#{$styleKey}:$width;
+	height:$height;
+}

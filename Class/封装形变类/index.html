@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style type="text/css">
+    .ball {
+        background: linear-gradient(#ff9b9b 50%, #106dbb 50%);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+    <script type="text/javascript" src="./transform.js"></script>
+    <script type="text/javascript">
+    //使用动画类 , 设置默认执行时间 , 设置动画顺序
+    Transform.config.defaultTime = 1000;
+    // const transform = new Transform('.ball');
+    // transform
+    //     .translate('100px,100px', 1000)
+    //     .scale(2, 1000)
+    //     .rotate(45)
+    //     .translate('200px,200px', 500)
+    //     .rotate(75)
+    //     .scale(3, 3000)
+    //     .done();
+
+    const multiTransform = new MultiTransform('.ball');
+    multiTransform
+        .translate('100px,100px', 1000)
+        .scale(2, 1000)
+        .rotate(45)
+        .translate('200px,200px', 500)
+        .sleep(2000)
+        .multi([
+        	{
+        		type:'translate',
+        		value:'0,0'
+        	},
+        	{
+        		type:'scale',
+        		value:1
+        	},
+        	])
+        .rotate(75)
+        .scale(3, 3000)
+        .done();
+    </script>
+</body>
+
+</html>

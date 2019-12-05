@@ -1,0 +1,56 @@
+//number
+$width:300px;
+$zoomValue:2;
+
+//color
+$color:red;
+$colorHex:#ffe932;
+
+//string
+$str:'hello.jpeg';
+
+//array sass中数组下标是从1开始的
+$list:(100px,200px,'string',2);
+
+//map
+$map:(top:1px,left:2px,bottom:3px,right:4px);
+
+//number
+.div{
+	width: $width;
+	height: $width;
+	zoom:$zoomValue;
+}
+
+// color
+.div{
+	color:$color;
+	background-color: $colorHex;
+}
+
+//string
+.div{
+	background-image: url('images/#{$str}');
+}
+
+//array
+.div{
+	width:nth($list,1);
+	height:nth($list,2);
+	zoom:index($list,'string');//直接查找数组元素的下标作为值
+}
+
+//map
+.div{
+	position: relative;
+	top: map-get($map,top);
+	left: map-get($map,left);
+	right: map-get($map,right);
+	bottom: map-get($map,bottom);
+}
+//遍历map
+.div{
+	@each $key,$value in $map{
+		#{$key}:$value;
+	}
+}
