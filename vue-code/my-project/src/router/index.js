@@ -6,6 +6,16 @@ import Index2 from '@/pages/demo2/index'
 import Index3 from '@/pages/demo3/index'
 import Index4 from '@/pages/demo4/index'
 import Index5 from '@/pages/demo5/index'
+import Index6 from '@/pages/demo6/index'
+import Index7 from '@/pages/demo7/index'
+import Index8 from '@/pages/demo8/index'
+import Index9 from '@/pages/demo9/index'
+import Index10 from '@/pages/demo10/index'
+import Index11 from '@/pages/demo11/index'
+import Index12 from '@/pages/demo12/index'
+import Index13 from '@/pages/demo13/index'
+import Index14 from '@/pages/demo14/index'
+import Index15 from '@/pages/demo15/index'
 
 Vue.use(Router)
 
@@ -40,6 +50,56 @@ export default new Router({
       path: '/demo5',
       name: 'demo5',
       component: Index5
+    },
+    {
+      path: '/demo6',
+      name: 'demo6',
+      component: Index6
+    },
+    {
+      path: '/demo7',
+      name: 'demo7',
+      component: Index7
+    },
+    {
+      path: '/demo8',
+      name: 'demo8',
+      component: Index8
+    },
+    {
+      path: '/demo9',
+      name: 'demo9',
+      component: Index9
+    },
+    {
+      path: '/demo10',
+      name: 'demo10',
+      component: Index10
+    },
+    {
+      path: '/demo11',
+      name: 'demo11',
+      component: Index11
+    },
+    {
+      path: '/demo12',
+      name: 'demo12',
+      component: Index12
+    },
+    {
+      path: '/demo13',
+      name: 'demo13',
+      component: Index13
+    },
+    {
+      path: '/demo14',
+      name: 'demo14',
+      component: Index14
+    },
+    {
+      path: '/demo15',
+      name: 'demo15',
+      component: Index15
     }
 
   ]
