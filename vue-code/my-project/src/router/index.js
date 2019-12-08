@@ -16,6 +16,8 @@ import Index12 from '@/pages/demo12/index'
 import Index13 from '@/pages/demo13/index'
 import Index14 from '@/pages/demo14/index'
 import Index15 from '@/pages/demo15/index'
+import Index16 from '@/pages/demo16/index'
+import Index17 from '@/pages/demo17/index'
 
 Vue.use(Router)
 
@@ -67,7 +69,7 @@ export default new Router({
       component: Index8
     },
     {
-      path: '/demo9',
+      path: '/demo9/:userId',
       name: 'demo9',
       component: Index9
     },
@@ -100,6 +102,16 @@ export default new Router({
       path: '/demo15',
       name: 'demo15',
       component: Index15
+    },
+    {
+      path: '/demo16',
+      name: 'demo16',
+      component: Index16
+    },
+    {
+      path: '/demo17',
+      name: 'demo17',
+      component: Index17
     }
 
   ]

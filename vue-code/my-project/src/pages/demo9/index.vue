@@ -35,6 +35,10 @@ export default {
       checkedNames: [],
       selected: ''
     }
+  },
+  mounted () {
+    alert(this.$route.params.userId)
+    alert(this.$route.query.type)
   }
 }
 </script>
