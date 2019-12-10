@@ -39,6 +39,9 @@ export default {
         fontSize: '53px'
       }
     }
+  },
+  method: {
+
   }
 }
 </script>
