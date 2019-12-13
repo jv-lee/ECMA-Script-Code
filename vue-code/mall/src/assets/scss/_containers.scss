@@ -15,6 +15,14 @@
   padding-bottom: $tabbar-height;
 }
 
+.g-header-container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: $navbar-z-index;
+  width: 100%;
+}
+
 .g-footer-container{
   position: absolute;
   left: 0;
@@ -22,4 +30,12 @@
   width: 100%;
   z-index: $tabbar-z-index;
   box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, 0.6)
+}
+
+.g-backtop-container{
+  position: absolute;
+  z-index: $backtop-z-index;
+  right: 10px;
+  // 处于navbar的上面+10个px 不遮挡navbar
+  bottom: $tabbar-height + 10px;
 }

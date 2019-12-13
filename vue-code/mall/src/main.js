@@ -5,6 +5,7 @@ import router from './router'
 import fastclick from 'fastclick'
 
 import 'assets/scss/index.scss'
+import 'swiper/dist/css/swiper.css'
 
 // 消除所有点击事件的300ms延迟
 fastclick.attach(document.body)

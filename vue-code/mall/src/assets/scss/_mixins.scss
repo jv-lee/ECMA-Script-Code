@@ -8,6 +8,13 @@
   flex-direction: $direction;
 }
 
+// flex-between
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 //ellipsis
 @mixin ellipsis() {
   overflow: hidden;
