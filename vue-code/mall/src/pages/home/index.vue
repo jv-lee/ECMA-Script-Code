@@ -4,13 +4,13 @@
       <home-header />
     </header>
     <!-- 带滚动条的容器 -->
-    <me-scroll>
+    <me-scroll :data="recommends">
       <!-- banner图 -->
-      <home-slider></home-slider>
+      <home-slider />
       <!-- grid导航按钮 -->
-      <home-nav></home-nav>
+      <home-nav />
       <!-- 商品列表 -->
-      <home-recommend></home-recommend>
+      <home-recommend @loaded="getRecommends" />
     </me-scroll>
     <div class="g-backtop-container"></div>
     <router-view></router-view>
@@ -30,6 +30,19 @@ export default {
     MeScroll,
     HomeNav,
     HomeRecommend
+  },
+  data () {
+    return {
+      recommends: []
+    }
+  },
+  methods: {
+    updateScroll () {
+
+    },
+    getRecommends (recommends) {
+      this.recommends = recommends
+    }
   }
 }
 </script>

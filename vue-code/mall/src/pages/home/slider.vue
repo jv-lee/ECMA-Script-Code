@@ -38,19 +38,19 @@ export default {
       sliders: [
         // {
         //   'linkUrl': 'https://www.imooc.com',
-        //   'picUrl': require('./1.jpg')
+        //   'picUrl': require('./img/1.jpg')
         // },
         // {
         //   'linkUrl': 'https://www.imooc.com',
-        //   'picUrl': require('./2.jpg')
+        //   'picUrl': require('./img/2.jpg')
         // },
         // {
         //   'linkUrl': 'https://www.imooc.com',
-        //   'picUrl': require('./3.jpg')
+        //   'picUrl': require('./img/3.jpg')
         // },
         // {
         //   'linkUrl': 'https://www.imooc.com',
-        //   'picUrl': require('./4.jpg')
+        //   'picUrl': require('./img/4.jpg')
         // }
       ]
     }
