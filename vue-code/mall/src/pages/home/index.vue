@@ -3,9 +3,15 @@
     <header class="g-header-container">
       <home-header />
     </header>
-    <div>
+    <!-- 带滚动条的容器 -->
+    <me-scroll>
+      <!-- banner图 -->
       <home-slider></home-slider>
-    </div>
+      <!-- grid导航按钮 -->
+      <home-nav></home-nav>
+      <!-- 商品列表 -->
+      <home-recommend></home-recommend>
+    </me-scroll>
     <div class="g-backtop-container"></div>
     <router-view></router-view>
   </div>
@@ -13,11 +19,17 @@
 <script>
 import HomeHeader from './header'
 import HomeSlider from './slider'
+import MeScroll from 'base/scroll'
+import HomeNav from './nav'
+import HomeRecommend from './recommend'
 export default {
   name: 'home',
   components: {
     HomeHeader,
-    HomeSlider
+    HomeSlider,
+    MeScroll,
+    HomeNav,
+    HomeRecommend
   }
 }
 </script>
