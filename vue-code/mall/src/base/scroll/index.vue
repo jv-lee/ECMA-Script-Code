@@ -1,5 +1,8 @@
 <template>
   <swiper :options="swiperOption" ref="swiper">
+    <div class="mine-scroll-pull-down" v-if="pullDown">
+      <me-loading :text="pullDownText" inline />
+    </div>
     <swiper-slide>
       <slot></slot>
     </swiper-slide>
@@ -8,11 +11,14 @@
 </template>
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import MeLoading from 'base/loading'
+// import { PULL_DOWN_HEIGHT, } from './config'
 export default {
   name: 'MeScroll',
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    MeLoading
   },
   props: {
     scrollbar: {
@@ -21,10 +27,15 @@ export default {
     },
     data: {
       type: [Array, Object]
+    },
+    pullDown: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
+      pullDownText: '下拉刷新',
       swiperOption: {
         direction: 'vertical',
         // 自适应显示模式
@@ -65,5 +76,14 @@ export default {
 
 .swiper-slide {
   height: auto;
+}
+
+.mine-scroll-pull-down {
+  position: absolute;
+  left: 0;
+  // top: -80px;
+  bottom: 100%;
+  width: 100%;
+  height: 80px;
 }
 </style>

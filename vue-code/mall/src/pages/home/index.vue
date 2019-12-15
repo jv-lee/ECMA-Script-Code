@@ -4,7 +4,7 @@
       <home-header />
     </header>
     <!-- 带滚动条的容器 -->
-    <me-scroll :data="recommends">
+    <me-scroll :data="recommends" pullDown>
       <!-- banner图 -->
       <home-slider />
       <!-- grid导航按钮 -->
