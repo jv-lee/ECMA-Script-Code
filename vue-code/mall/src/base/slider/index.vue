@@ -1,5 +1,6 @@
 <template>
-  <swiper :options="swiperOptions">
+  <!-- 通过更新keyId更新整个组件 重新加载生命周期和创建 解决更新了数据后 view显示异常问题 -->
+  <swiper :options="swiperOptions" :key="keyId">
     <slot></slot>
     <div class="swiper-pagination" v-if="pagination" slot="pagination"></div>
   </swiper>
@@ -35,11 +36,37 @@ export default {
     pagination: {
       type: Boolean,
       default: true
+    },
+    // 通过更新keyId更新整个组件 重新加载生命周期和创建 解决更新了数据后 view显示异常问题
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
     }
   },
   data () {
     return {
-      swiperOptions: {
+      keyId: Math.random()
+
+    }
+  },
+  // 监听数据变化更新keyId -> 通过更新keyId更新整个组件 重新加载生命周期和创建 解决更新了数据后 view显示异常问题
+  watch: {
+    data (newData) {
+      if (newData.length === 0) {
+        return
+      }
+      this.swiperOptions.loop = newData.length <= 1 ? false : this.swiperOptions.loop
+      this.keyId = Math.random()
+    }
+  },
+  created () {
+    this.init()
+  },
+  methods: {
+    init () {
+      this.swiperOptions = {
         watchOverflow: true, // 只有1个slider 不轮播loop ，swiper会失效
         direction: this.direction,
         autoplay: this.interval ? {
@@ -47,7 +74,7 @@ export default {
           disableOnInteraction: false
         } : false,
         sliderPerView: 1, // 设置slider容器能够同时显示的slider数量
-        loop: this.loop,
+        loop: this.data.length <= 1 ? false : this.loop,
         pagination: { // 分页器
           el: this.pagination ? '.swiper-pagination' : null
         }

@@ -4,9 +4,9 @@
       <home-header />
     </header>
     <!-- 带滚动条的容器 -->
-    <me-scroll :data="recommends" pullDown>
+    <me-scroll :data="recommends" pullDown @pull-down="pullToRefresh">
       <!-- banner图 -->
-      <home-slider />
+      <home-slider ref="slider" />
       <!-- grid导航按钮 -->
       <home-nav />
       <!-- 商品列表 -->
@@ -42,6 +42,9 @@ export default {
     },
     getRecommends (recommends) {
       this.recommends = recommends
+    },
+    pullToRefresh (end) {
+      this.$refs.slider.update().then(end)
     }
   }
 }
