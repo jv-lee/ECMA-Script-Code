@@ -50,20 +50,28 @@ export default {
     this.getRecommend()
   },
   methods: {
+    // API
+    update () {
+      return this.getRecommend()
+    },
+
     getRecommend () {
       if (this.curPage > this.totalPage) {
-        return
+        return Promise.reject(new Error('没有更多'))
       }
-      getHomeRecommend(this.curPage).then(data => {
-        if (data) {
-          console.log(data)
-          this.curPage++
-          this.totalPage = data.tatalPage
-          // concat数据填充 等于list的 addAll 方法
-          this.recommends = this.recommends.concat(data.itemList)
-          // 更新滚动条 -> 子组件向父组件发送事件 home/index.vue home-recommend @loaded="updateScroll"
-          this.$emit('loaded', this.recommends)
-        }
+      return getHomeRecommend(this.curPage).then(data => {
+        return new Promise(resolve => {
+          if (data) {
+            console.log(data)
+            this.curPage++
+            this.totalPage = data.tatalPage
+            // concat数据填充 等于list的 addAll 方法
+            this.recommends = this.recommends.concat(data.itemList)
+            // 更新滚动条 -> 子组件向父组件发送事件 home/index.vue home-recommend @loaded="updateScroll"
+            this.$emit('loaded', this.recommends)
+            resolve()
+          }
+        })
       })
     }
   }

@@ -4,13 +4,19 @@
       <home-header />
     </header>
     <!-- 带滚动条的容器 -->
-    <me-scroll :data="recommends" pullDown @pull-down="pullToRefresh">
+    <me-scroll
+      :data="recommends"
+      pullDown
+      pullUp
+      @pull-down="pullToRefresh"
+      @pull-up="pullToLoadMore"
+    >
       <!-- banner图 -->
       <home-slider ref="slider" />
       <!-- grid导航按钮 -->
       <home-nav />
       <!-- 商品列表 -->
-      <home-recommend @loaded="getRecommends" />
+      <home-recommend @loaded="getRecommends" ref="recommend" />
     </me-scroll>
     <div class="g-backtop-container"></div>
     <router-view></router-view>
@@ -45,6 +51,17 @@ export default {
     },
     pullToRefresh (end) {
       this.$refs.slider.update().then(end)
+    },
+    pullToLoadMore (end) {
+      this.$refs.recommend.update().then(end).catch(err => {
+        if (err) {
+          console.log(err)
+        }
+        end()
+        // 处理没有更多数据的情况
+        // 禁止加载更多数据
+        // 替换上拉时的loading，改为没有更多数据
+      })
     }
   }
 }
