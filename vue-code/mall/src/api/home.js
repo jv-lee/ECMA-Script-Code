@@ -51,9 +51,7 @@ export const getHomeSlider = () => {
     ]
   }).then(data => {
     return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(data)
-      }, 1000)
+      resolve(data)
     })
   })
 }
@@ -82,9 +80,7 @@ export const getHomeRecommend = (page = 1, psize = HOME_RECOMMEND_PAGE_SIZE) => 
     }
   }).then(data => {
     return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(data)
-      }, 1000)
+      resolve(data)
     })
   })
 }

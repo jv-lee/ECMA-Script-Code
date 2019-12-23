@@ -92,7 +92,7 @@ export default {
       this.pullUpText = PULL_UP_TEXT_INIT
       this.swiperOption = {
         direction: 'vertical',
-        slidersPerView: 'auto',
+        slidesPerView: 'auto',
         freeMode: true,
         setWrapperSize: true,
         scrollbar: {
